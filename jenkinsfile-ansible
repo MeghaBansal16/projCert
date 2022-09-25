@@ -1,0 +1,20 @@
+pipeline {
+    agent {
+        label "jenkinsslave"
+    }
+
+    stages {
+        stage('Install docker') {
+            steps {
+                sh 'ansible-playbook docker-install.yml -l docker'
+            }
+        }
+        stage('Check status') {
+            steps {
+                sh 'systemctl status docker.service'
+                sh 'docker ps'
+            }
+        }
+    }
+}
+
