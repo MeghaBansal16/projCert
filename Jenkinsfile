@@ -2,6 +2,7 @@ pipeline {
     agent {
         label "jenkinsslave"
     }
+
     stages {
         stage('docker-build') {
             steps {
