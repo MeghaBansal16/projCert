@@ -1,6 +1,3 @@
 ---
-- hosts: docker
-  tasks:
-  - name: Install Docker
-    ansible.builtin.shell: cd ~ && curl -fsSL https://get.docker.com -o get-docker.sh && sudo sh get-docker.:%h
-
+- hosts: 127.0.0.1
+  connection: local
